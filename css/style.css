@@ -1,0 +1,104 @@
+body{
+    background-color: #f5f7fb;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar{
+    background-color: #111827;
+    min-height: 100vh;
+    color: white;
+}
+
+.logo-section h3{
+    font-weight: bold;
+}
+
+.nav-link{
+    color: #cbd5e1;
+    padding: 15px 25px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    background-color: #1e293b;
+    color: white;
+}
+
+.nav-link.active{
+    background-color: #2563eb;
+    color: white;
+}
+
+.main-content{
+    padding: 0;
+}
+
+.top-navbar{
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-icon{
+    font-size: 20px;
+    cursor: pointer;
+}
+.stats-card{
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.stats-card:hover{
+    transform: translateY(-5px);
+}
+
+.card-title-text{
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.card-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+/* Different Card Colors */
+
+.revenue-card .card-icon{
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.users-card .card-icon{
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+}
+
+.orders-card .card-icon{
+    background: linear-gradient(135deg, #f97316, #fb923c);
+}
+
+.conversion-card .card-icon{
+    background: linear-gradient(135deg, #10b981, #22c55e);
+}
+
+.growth{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.positive{
+    color: green;
+}
+
+.negative{
+    color: red;
+}
