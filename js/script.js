@@ -132,4 +132,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // --- Animated Counters ---
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // lower is faster
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / speed;
+        
+        const updateCount = () => {
+            const current = +counter.innerText.replace(/,/g, '');
+            if (current < target) {
+                counter.innerText = Math.ceil(current + increment).toLocaleString();
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target.toLocaleString();
+            }
+        };
+        
+        counter.innerText = '0';
+        updateCount();
+    });
+
 });

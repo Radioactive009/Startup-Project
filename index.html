@@ -36,33 +36,33 @@
                 <h3>InsightX</h3>
             </div>
 
-            <ul class="nav flex-column">
+                <ul class="nav flex-column">
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        <i class="bi bi-grid"></i> Dashboard
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-grid"></i> Dashboard
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bar-chart"></i> Analytics
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">
+                            <i class="bi bi-bar-chart"></i> Analytics
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-people"></i> Team
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">
+                            <i class="bi bi-people"></i> Team
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-gear"></i> Settings
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">
+                            <i class="bi bi-gear"></i> Settings
+                        </a>
+                    </li>
 
-            </ul>
+                </ul>
             </div>
         </div>
 
@@ -85,7 +85,11 @@
                         <i class="bi bi-moon fs-5 theme-icon"></i>
                     </button>
 
-                    <i class="bi bi-bell notification-icon"></i>
+                    <i class="bi bi-bell notification-icon position-relative" data-bs-toggle="offcanvas" data-bs-target="#notificationPanel">
+                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </i>
 
                     <img src="https://i.pravatar.cc/40"
                          class="rounded-circle"
@@ -107,7 +111,7 @@
 
                     <div>
                         <p class="card-title-text">Revenue</p>
-                        <h3>$24,500</h3>
+                        <h3>$<span class="counter" data-target="24500">24500</span></h3>
                         <span class="growth positive">
                             +12.5%
                         </span>
@@ -130,7 +134,7 @@
 
                     <div>
                         <p class="card-title-text">Users</p>
-                        <h3>8,420</h3>
+                        <h3><span class="counter" data-target="8420">8420</span></h3>
                         <span class="growth positive">
                             +8.2%
                         </span>
@@ -153,7 +157,7 @@
 
                     <div>
                         <p class="card-title-text">Orders</p>
-                        <h3>1,245</h3>
+                        <h3><span class="counter" data-target="1245">1245</span></h3>
                         <span class="growth negative">
                             -2.4%
                         </span>
@@ -176,7 +180,7 @@
 
                     <div>
                         <p class="card-title-text">Conversion</p>
-                        <h3>68%</h3>
+                        <h3><span class="counter" data-target="68">68</span>%</h3>
                         <span class="growth positive">
                             +5.7%
                         </span>
@@ -372,7 +376,15 @@
                                 <td class="fw-semibold text-main">$1,250.00</td>
                                 <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 fw-medium">Completed</span></td>
                                 <td class="text-end">
-                                    <button class="btn btn-sm btn-action rounded-circle"><i class="bi bi-three-dots"></i></button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-download me-2 text-muted"></i>Download Invoice</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-x-circle me-2"></i>Refund</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -386,7 +398,13 @@
                                 <td class="fw-semibold text-main">$840.50</td>
                                 <td><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-3 py-2 fw-medium">Pending</span></td>
                                 <td class="text-end">
-                                    <button class="btn btn-sm btn-action rounded-circle"><i class="bi bi-three-dots"></i></button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-repeat me-2 text-muted"></i>Retry Charge</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -400,7 +418,13 @@
                                 <td class="fw-semibold text-main">$3,400.00</td>
                                 <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 fw-medium">Completed</span></td>
                                 <td class="text-end">
-                                    <button class="btn btn-sm btn-action rounded-circle"><i class="bi bi-three-dots"></i></button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-download me-2 text-muted"></i>Download Invoice</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -414,7 +438,13 @@
                                 <td class="fw-semibold text-main">$450.00</td>
                                 <td><span class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-3 py-2 fw-medium">Failed</span></td>
                                 <td class="text-end">
-                                    <button class="btn btn-sm btn-action rounded-circle"><i class="bi bi-three-dots"></i></button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Error Logs</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2 text-muted"></i>Email Customer</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -486,7 +516,56 @@
     </div>
 </div>
 
-
+<!-- Notification Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="notificationPanel" style="background-color: var(--card-bg); border-left: 1px solid var(--card-border);">
+    <div class="offcanvas-header border-bottom" style="border-color: var(--card-border) !important;">
+        <h5 class="offcanvas-title fw-bold text-main">Notifications</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" style="background-color: var(--table-hover); border-color: var(--table-border);">
+                <div class="rounded-circle bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 text-main fw-semibold">New message from Alex</h6>
+                        <small class="text-primary">Now</small>
+                    </div>
+                    <p class="mb-1 small text-muted">Can you review the latest Q3 report metrics?</p>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border-color-custom" style="background-color: transparent; border-color: var(--table-border);">
+                <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 text-main fw-semibold">Deployment Successful</h6>
+                        <small class="text-muted">2h ago</small>
+                    </div>
+                    <p class="mb-1 small text-muted">v2.4.1 has been shipped to production.</p>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border-color-custom" style="background-color: transparent; border-color: var(--table-border);">
+                <div class="rounded-circle bg-warning bg-opacity-10 text-warning d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                </div>
+                <div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 text-main fw-semibold">High CPU Usage</h6>
+                        <small class="text-muted">5h ago</small>
+                    </div>
+                    <p class="mb-1 small text-muted">Server workload reached 92% capacity.</p>
+                </div>
+            </a>
+        </div>
+        <div class="p-3 text-center border-top" style="border-color: var(--card-border) !important;">
+            <button class="btn btn-sm btn-link text-decoration-none">Mark all as read</button>
+        </div>
+    </div>
+</div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
