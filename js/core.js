@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             updateThemeIcon(currentTheme);
             
             // Re-render chart if it exists
-            if (window.revenueChartInstance) {
-                if (typeof updateChartTheme === 'function') updateChartTheme(currentTheme);
+            if (typeof updateChartTheme === 'function') {
+                updateChartTheme(currentTheme);
             }
 
             if (window.Toast) {
@@ -81,5 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 800);
     }
+
+    // 4. Global Search Hotkey (Cmd/Ctrl + K)
+    document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            const searchModalElement = document.getElementById('searchModal');
+            if (searchModalElement && window.bootstrap) {
+                const searchModal = window.bootstrap.Modal.getOrCreateInstance(searchModalElement);
+                searchModal.toggle();
+            }
+        }
+    });
 
 });
