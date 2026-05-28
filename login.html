@@ -165,5 +165,8 @@
         const storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', storedTheme);
     </script>
+    <!-- Core JS -->
+    <script src="js/notifications.js"></script>
+    <script src="js/core.js"></script>
 </body>
 </html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightX Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container-fluid p-0">
+    <div class="d-flex w-100">
+
+        <!-- Sidebar (Offcanvas on Mobile) -->
+        <div class="sidebar-wrapper offcanvas-lg offcanvas-start p-0" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            
+            <div class="offcanvas-header d-lg-none border-bottom border-secondary">
+                <h5 class="offcanvas-title text-white fw-bold" id="sidebarMenuLabel">InsightX</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+            </div>
+            
+            <div class="offcanvas-body d-flex flex-column p-0">
+                <div class="logo-section p-4 d-none d-lg-block">
+                <h3>InsightX</h3>
+            </div>
+
+                <ul class="nav flex-column">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-grid"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">
+                            <i class="bi bi-bar-chart"></i> Analytics
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">
+                            <i class="bi bi-people"></i> Team
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">
+                            <i class="bi bi-gear"></i> Settings
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content w-100">
+
+            <!-- Navbar -->
+            <div class="top-navbar d-flex justify-content-between align-items-center p-3 px-4">
+
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+                        <i class="bi bi-list fs-5"></i>
+                    </button>
+                    <h4>Dashboard Overview</h4>
+                </div>
+
+                <div class="profile-section d-flex align-items-center gap-3">
+
+                    <button id="themeToggle" class="btn btn-link text-decoration-none p-0 me-2" aria-label="Toggle Theme">
+                        <i class="bi bi-moon fs-5 theme-icon"></i>
+                    </button>
+
+                    <i class="bi bi-bell notification-icon position-relative" data-bs-toggle="offcanvas" data-bs-target="#notificationPanel">
+                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </i>
+
+                    <img src="https://i.pravatar.cc/40"
+                         class="rounded-circle"
+                         alt="profile">
+
+                </div>
+
+            </div>
+
+            <div class="container-fluid px-4 py-4 px-lg-5 py-lg-5">
+
+    <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-6 col-xl-3">
+            <div class="stats-card revenue-card loading">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <p class="card-title-text">Revenue</p>
+                        <h3>$<span class="counter" data-target="24500">24500</span></h3>
+                        <span class="growth positive">
+                            +12.5%
+                        </span>
+                    </div>
+
+                    <div class="card-icon">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-xl-3">
+            <div class="stats-card users-card loading">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <p class="card-title-text">Users</p>
+                        <h3><span class="counter" data-target="8420">8420</span></h3>
+                        <span class="growth positive">
+                            +8.2%
+                        </span>
+                    </div>
+
+                    <div class="card-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-xl-3">
+            <div class="stats-card orders-card loading">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <p class="card-title-text">Orders</p>
+                        <h3><span class="counter" data-target="1245">1245</span></h3>
+                        <span class="growth negative">
+                            -2.4%
+                        </span>
+                    </div>
+
+                    <div class="card-icon">
+                        <i class="bi bi-bag-check-fill"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-xl-3">
+            <div class="stats-card conversion-card loading">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <p class="card-title-text">Conversion</p>
+                        <h3><span class="counter" data-target="68">68</span>%</h3>
+                        <span class="growth positive">
+                            +5.7%
+                        </span>
+                    </div>
+
+                    <div class="card-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Analytics Section -->
+    <div class="row g-4 mt-1">
+        
+        <!-- Revenue Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="stats-card dashboard-chart-card loading">
+                <h5 class="card-title-text mb-4">Revenue Overview</h5>
+                <div class="chart-container w-100">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traffic Sources -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="stats-card traffic-card loading">
+                <h5 class="card-title-text mb-4">Traffic Sources</h5>
+                
+                <div class="traffic-item">
+                    <div class="traffic-header">
+                        <span>Direct</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill bg-direct" style="width: 45%"></div>
+                    </div>
+                </div>
+
+                <div class="traffic-item">
+                    <div class="traffic-header">
+                        <span>Social</span>
+                        <span>25%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill bg-social" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <div class="traffic-item">
+                    <div class="traffic-header">
+                        <span>Organic</span>
+                        <span>20%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill bg-organic" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <div class="traffic-item">
+                    <div class="traffic-header">
+                        <span>Referral</span>
+                        <span>10%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill bg-referral" style="width: 10%"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Advanced Analytics Row -->
+    <div class="row g-4 mt-1">
+        
+        <!-- AI Insights -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="stats-card ai-card position-relative overflow-hidden h-100">
+                <div class="ai-glow-bg"></div>
+                <div class="d-flex justify-content-between align-items-start mb-4 position-relative">
+                    <h5 class="card-title-text mb-0"><i class="bi bi-magic text-primary me-2"></i>AI Insights</h5>
+                    <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3">Updated</span>
+                </div>
+                <div class="position-relative">
+                    <h3 class="mb-3 text-main">Strong Growth Indicator</h3>
+                    <p class="text-muted small mb-4 line-height-base">Based on the last 30 days, we predict a 15% increase in MRR next month. Consider running a promotional campaign to capitalize on organic traffic spikes.</p>
+                    <div class="ai-metrics d-flex gap-4">
+                        <div class="ai-metric-item">
+                            <span class="d-block text-muted small mb-1">Confidence</span>
+                            <span class="fw-bold text-success fs-5">94%</span>
+                        </div>
+                        <div class="ai-metric-item">
+                            <span class="d-block text-muted small mb-1">Action</span>
+                            <span class="fw-bold text-primary fs-5">Run Promo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Circular Analytics Widgets -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="row g-4 h-100">
+                <!-- Circle 1: Server Usage -->
+                <div class="col-md-4">
+                    <div class="stats-card text-center d-flex flex-column justify-content-center align-items-center h-100 py-4">
+                        <h6 class="card-title-text mb-4">Server Load</h6>
+                        <div class="circle-progress position-relative mb-2" style="--val: 78; --circle-color: #6366f1;">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="circle-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="circle-content position-absolute top-50 start-50 translate-middle">
+                                <span class="fs-4 fw-bold text-main">78%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Circle 2: Storage -->
+                <div class="col-md-4">
+                    <div class="stats-card text-center d-flex flex-column justify-content-center align-items-center h-100 py-4">
+                        <h6 class="card-title-text mb-4">Storage</h6>
+                        <div class="circle-progress position-relative mb-2" style="--val: 45; --circle-color: #10b981;">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="circle-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="circle-content position-absolute top-50 start-50 translate-middle">
+                                <span class="fs-4 fw-bold text-main">45%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Circle 3: Retention -->
+                <div class="col-md-4">
+                    <div class="stats-card text-center d-flex flex-column justify-content-center align-items-center h-100 py-4">
+                        <h6 class="card-title-text mb-4">Retention</h6>
+                        <div class="circle-progress position-relative mb-2" style="--val: 92; --circle-color: #f59e0b;">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="circle-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="circle-content position-absolute top-50 start-50 translate-middle">
+                                <span class="fs-4 fw-bold text-main">92%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Tables & Timeline Section -->
+    <div class="row g-4 mt-1">
+        
+        <!-- Recent Transactions -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="stats-card table-card h-100">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="card-title-text mb-0">Recent Transactions</h5>
+                    <a href="#" class="text-decoration-none text-primary small fw-semibold">View All</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table custom-table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Transaction ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 py-2">
+                                        <img src="https://i.pravatar.cc/40?img=11" class="rounded-circle" width="36" height="36" alt="Avatar">
+                                        <span class="fw-medium text-main">Acme Corp</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted">#TRX-8273</td>
+                                <td class="fw-semibold text-main">$1,250.00</td>
+                                <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 fw-medium">Completed</span></td>
+                                <td class="text-end">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-download me-2 text-muted"></i>Download Invoice</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-x-circle me-2"></i>Refund</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 py-2">
+                                        <img src="https://i.pravatar.cc/40?img=12" class="rounded-circle" width="36" height="36" alt="Avatar">
+                                        <span class="fw-medium text-main">Globex Inc</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted">#TRX-8274</td>
+                                <td class="fw-semibold text-main">$840.50</td>
+                                <td><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-3 py-2 fw-medium">Pending</span></td>
+                                <td class="text-end">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-repeat me-2 text-muted"></i>Retry Charge</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 py-2">
+                                        <img src="https://i.pravatar.cc/40?img=13" class="rounded-circle" width="36" height="36" alt="Avatar">
+                                        <span class="fw-medium text-main">Soylent Corp</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted">#TRX-8275</td>
+                                <td class="fw-semibold text-main">$3,400.00</td>
+                                <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 fw-medium">Completed</span></td>
+                                <td class="text-end">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-download me-2 text-muted"></i>Download Invoice</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 py-2">
+                                        <img src="https://i.pravatar.cc/40?img=14" class="rounded-circle" width="36" height="36" alt="Avatar">
+                                        <span class="fw-medium text-main">Initech</span>
+                                    </div>
+                                </td>
+                                <td class="text-muted">#TRX-8276</td>
+                                <td class="fw-semibold text-main">$450.00</td>
+                                <td><span class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-3 py-2 fw-medium">Failed</span></td>
+                                <td class="text-end">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Error Logs</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2 text-muted"></i>Email Customer</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Timeline -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="stats-card h-100">
+                <h5 class="card-title-text mb-4">Activity Stream</h5>
+                
+                <div class="timeline mt-4">
+                    <div class="timeline-item d-flex gap-3 position-relative pb-4">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-icon bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
+                            <i class="bi bi-person-plus-fill"></i>
+                        </div>
+                        <div class="timeline-content pt-1">
+                            <h6 class="mb-1 text-main fs-6">New user joined</h6>
+                            <p class="text-muted small mb-1">Alice Smith created an account</p>
+                            <span class="small text-muted opacity-75">2 mins ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item d-flex gap-3 position-relative pb-4">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-icon bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="timeline-content pt-1">
+                            <h6 class="mb-1 text-main fs-6">Payment received</h6>
+                            <p class="text-muted small mb-1">$1,250.00 from Acme Corp</p>
+                            <span class="small text-muted opacity-75">1 hour ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item d-flex gap-3 position-relative pb-4">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-icon bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
+                            <i class="bi bi-rocket-fill"></i>
+                        </div>
+                        <div class="timeline-content pt-1">
+                            <h6 class="mb-1 text-main fs-6">Deployment completed</h6>
+                            <p class="text-muted small mb-1">v2.4.1 shipped successfully</p>
+                            <span class="small text-muted opacity-75">3 hours ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item d-flex gap-3 position-relative">
+                        <div class="timeline-icon bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                        </div>
+                        <div class="timeline-content pt-1">
+                            <h6 class="mb-1 text-main fs-6">Server warning</h6>
+                            <p class="text-muted small mb-1">CPU usage spiked to 92%</p>
+                            <span class="small text-muted opacity-75">5 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+        </div>
+    </div>
+</div>
+
+<!-- Notification Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="notificationPanel" style="background-color: var(--card-bg); border-left: 1px solid var(--card-border);">
+    <div class="offcanvas-header border-bottom" style="border-color: var(--card-border) !important;">
+        <h5 class="offcanvas-title fw-bold text-main">Notifications</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" style="background-color: var(--table-hover); border-color: var(--table-border);">
+                <div class="rounded-circle bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 text-main fw-semibold">New message from Alex</h6>
+                        <small class="text-primary">Now</small>
+                    </div>
+                    <p class="mb-1 small text-muted">Can you review the latest Q3 report metrics?</p>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border-color-custom" style="background-color: transparent; border-color: var(--table-border);">
+                <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 text-main fw-semibold">Deployment Successful</h6>
+                        <small class="text-muted">2h ago</small>
+                    </div>
+                    <p class="mb-1 small text-muted">v2.4.1 has been shipped to production.</p>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border-color-custom" style="background-color: transparent; border-color: var(--table-border);">
+                <div class="rounded-circle bg-warning bg-opacity-10 text-warning d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                </div>
+                <div>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1 text-main fw-semibold">High CPU Usage</h6>
+                        <small class="text-muted">5h ago</small>
+                    </div>
+                    <p class="mb-1 small text-muted">Server workload reached 92% capacity.</p>
+                </div>
+            </a>
+        </div>
+        <div class="p-3 text-center border-top" style="border-color: var(--card-border) !important;">
+            <button class="btn btn-sm btn-link text-decoration-none">Mark all as read</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/notifications.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
