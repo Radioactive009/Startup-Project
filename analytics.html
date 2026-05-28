@@ -39,13 +39,13 @@
                 <ul class="nav flex-column">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
+                        <a class="nav-link" href="index.html">
                             <i class="bi bi-grid"></i> Dashboard
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="analytics.html">
+                        <a class="nav-link active" href="analytics.html">
                             <i class="bi bi-bar-chart"></i> Analytics
                         </a>
                     </li>
@@ -99,242 +99,64 @@
 
             </div>
 
-            <div class="container-fluid px-4 py-4 px-lg-5 py-lg-5">
+    <div class="container-fluid px-4 py-4 px-lg-5 py-lg-5">
 
-    <div class="row g-4">
-
-        <!-- Card 1 -->
-        <div class="col-md-6 col-xl-3">
-            <div class="stats-card revenue-card loading">
-
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <div>
-                        <p class="card-title-text">Revenue</p>
-                        <h3>$<span class="counter" data-target="24500">24500</span></h3>
-                        <span class="growth positive">
-                            +12.5%
-                        </span>
-                    </div>
-
-                    <div class="card-icon">
-                        <i class="bi bi-currency-dollar"></i>
-                    </div>
-
-                </div>
-
+        <!-- Header & Filters -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="text-main mb-1 fw-bold">Deep Analytics</h4>
+                <p class="text-muted small mb-0">Track your product's performance and user behavior.</p>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn custom-input btn-sm d-flex align-items-center gap-2">
+                    <i class="bi bi-calendar3"></i> Last 30 Days <i class="bi bi-chevron-down ms-1"></i>
+                </button>
+                <button class="btn btn-primary btn-sm d-flex align-items-center gap-2" onclick="window.Toast.show('Report exported successfully', 'success')">
+                    <i class="bi bi-download"></i> Export
+                </button>
             </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-md-6 col-xl-3">
-            <div class="stats-card users-card loading">
-
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <div>
-                        <p class="card-title-text">Users</p>
-                        <h3><span class="counter" data-target="8420">8420</span></h3>
-                        <span class="growth positive">
-                            +8.2%
-                        </span>
-                    </div>
-
-                    <div class="card-icon">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-6 col-xl-3">
-            <div class="stats-card orders-card loading">
-
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <div>
-                        <p class="card-title-text">Orders</p>
-                        <h3><span class="counter" data-target="1245">1245</span></h3>
-                        <span class="growth negative">
-                            -2.4%
-                        </span>
-                    </div>
-
-                    <div class="card-icon">
-                        <i class="bi bi-bag-check-fill"></i>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-6 col-xl-3">
-            <div class="stats-card conversion-card loading">
-
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <div>
-                        <p class="card-title-text">Conversion</p>
-                        <h3><span class="counter" data-target="68">68</span>%</h3>
-                        <span class="growth positive">
-                            +5.7%
-                        </span>
-                    </div>
-
-                    <div class="card-icon">
-                        <i class="bi bi-graph-up-arrow"></i>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Analytics Section -->
-    <div class="row g-4 mt-1">
-        
-        <!-- Revenue Chart -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="stats-card dashboard-chart-card loading">
-                <h5 class="card-title-text mb-4">Revenue Overview</h5>
-                <div class="chart-container w-100">
-                    <canvas id="revenueChart"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <!-- Traffic Sources -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="stats-card traffic-card loading">
-                <h5 class="card-title-text mb-4">Traffic Sources</h5>
-                
-                <div class="traffic-item">
-                    <div class="traffic-header">
-                        <span>Direct</span>
-                        <span>45%</span>
-                    </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill bg-direct" style="width: 45%"></div>
-                    </div>
-                </div>
-
-                <div class="traffic-item">
-                    <div class="traffic-header">
-                        <span>Social</span>
-                        <span>25%</span>
-                    </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill bg-social" style="width: 25%"></div>
-                    </div>
-                </div>
-
-                <div class="traffic-item">
-                    <div class="traffic-header">
-                        <span>Organic</span>
-                        <span>20%</span>
-                    </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill bg-organic" style="width: 20%"></div>
-                    </div>
-                </div>
-
-                <div class="traffic-item">
-                    <div class="traffic-header">
-                        <span>Referral</span>
-                        <span>10%</span>
-                    </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill bg-referral" style="width: 10%"></div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Advanced Analytics Row -->
-    <div class="row g-4 mt-1">
-        
-        <!-- AI Insights -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="stats-card ai-card position-relative overflow-hidden h-100">
-                <div class="ai-glow-bg"></div>
-                <div class="d-flex justify-content-between align-items-start mb-4 position-relative">
-                    <h5 class="card-title-text mb-0"><i class="bi bi-magic text-primary me-2"></i>AI Insights</h5>
-                    <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3">Updated</span>
-                </div>
-                <div class="position-relative">
-                    <h3 class="mb-3 text-main">Strong Growth Indicator</h3>
-                    <p class="text-muted small mb-4 line-height-base">Based on the last 30 days, we predict a 15% increase in MRR next month. Consider running a promotional campaign to capitalize on organic traffic spikes.</p>
-                    <div class="ai-metrics d-flex gap-4">
-                        <div class="ai-metric-item">
-                            <span class="d-block text-muted small mb-1">Confidence</span>
-                            <span class="fw-bold text-success fs-5">94%</span>
-                        </div>
-                        <div class="ai-metric-item">
-                            <span class="d-block text-muted small mb-1">Action</span>
-                            <span class="fw-bold text-primary fs-5">Run Promo</span>
+        <!-- Full Width Traffic Chart -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="stats-card loading">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="card-title-text mb-0">Global Traffic (Area)</h5>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary active">All</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Organic</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Paid</button>
                         </div>
                     </div>
+                    <div class="chart-container" style="height: 350px;">
+                        <canvas id="trafficAreaChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Circular Analytics Widgets -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="row g-4 h-100">
-                <!-- Circle 1: Server Usage -->
-                <div class="col-md-4">
-                    <div class="stats-card text-center d-flex flex-column justify-content-center align-items-center h-100 py-4">
-                        <h6 class="card-title-text mb-4">Server Load</h6>
-                        <div class="circle-progress position-relative mb-2" style="--val: 78; --circle-color: #6366f1;">
-                            <svg viewBox="0 0 100 100">
-                                <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
-                                <circle class="circle-fill" cx="50" cy="50" r="40"></circle>
-                            </svg>
-                            <div class="circle-content position-absolute top-50 start-50 translate-middle">
-                                <span class="fs-4 fw-bold text-main">78%</span>
-                            </div>
-                        </div>
+        <!-- Two Column Charts -->
+        <div class="row g-4 mb-4">
+            <!-- Bar Chart -->
+            <div class="col-lg-7">
+                <div class="stats-card loading h-100">
+                    <h5 class="card-title-text mb-4">User Acquisition (Bar)</h5>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="acquisitionBarChart"></canvas>
                     </div>
                 </div>
-                
-                <!-- Circle 2: Storage -->
-                <div class="col-md-4">
-                    <div class="stats-card text-center d-flex flex-column justify-content-center align-items-center h-100 py-4">
-                        <h6 class="card-title-text mb-4">Storage</h6>
-                        <div class="circle-progress position-relative mb-2" style="--val: 45; --circle-color: #10b981;">
-                            <svg viewBox="0 0 100 100">
-                                <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
-                                <circle class="circle-fill" cx="50" cy="50" r="40"></circle>
-                            </svg>
-                            <div class="circle-content position-absolute top-50 start-50 translate-middle">
-                                <span class="fs-4 fw-bold text-main">45%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Circle 3: Retention -->
-                <div class="col-md-4">
-                    <div class="stats-card text-center d-flex flex-column justify-content-center align-items-center h-100 py-4">
-                        <h6 class="card-title-text mb-4">Retention</h6>
-                        <div class="circle-progress position-relative mb-2" style="--val: 92; --circle-color: #f59e0b;">
-                            <svg viewBox="0 0 100 100">
-                                <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
-                                <circle class="circle-fill" cx="50" cy="50" r="40"></circle>
-                            </svg>
-                            <div class="circle-content position-absolute top-50 start-50 translate-middle">
-                                <span class="fs-4 fw-bold text-main">92%</span>
-                            </div>
+            </div>
+            <!-- Donut Chart -->
+            <div class="col-lg-5">
+                <div class="stats-card loading h-100">
+                    <h5 class="card-title-text mb-4">Device Distribution (Donut)</h5>
+                    <div class="chart-container d-flex justify-content-center align-items-center" style="height: 300px; position: relative;">
+                        <canvas id="deviceDonutChart"></canvas>
+                        <!-- Center text for donut -->
+                        <div class="position-absolute text-center" style="pointer-events: none;">
+                            <h3 class="mb-0 text-main fw-bold">100%</h3>
+                            <span class="text-muted small">Total Users</span>
                         </div>
                     </div>
                 </div>
@@ -342,176 +164,6 @@
         </div>
 
     </div>
-
-    <!-- Tables & Timeline Section -->
-    <div class="row g-4 mt-1">
-        
-        <!-- Recent Transactions -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="stats-card table-card h-100">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h5 class="card-title-text mb-0">Recent Transactions</h5>
-                    <a href="#" class="text-decoration-none text-primary small fw-semibold">View All</a>
-                </div>
-                <div class="table-responsive">
-                    <table class="table custom-table align-middle mb-0">
-                        <thead>
-                            <tr>
-                                <th>Customer</th>
-                                <th>Transaction ID</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th class="text-end">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center gap-3 py-2">
-                                        <img src="https://i.pravatar.cc/40?img=11" class="rounded-circle" width="36" height="36" alt="Avatar">
-                                        <span class="fw-medium text-main">Acme Corp</span>
-                                    </div>
-                                </td>
-                                <td class="text-muted">#TRX-8273</td>
-                                <td class="fw-semibold text-main">$1,250.00</td>
-                                <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 fw-medium">Completed</span></td>
-                                <td class="text-end">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
-                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-download me-2 text-muted"></i>Download Invoice</a></li>
-                                            <li><hr class="dropdown-divider"></li>
-                                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-x-circle me-2"></i>Refund</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center gap-3 py-2">
-                                        <img src="https://i.pravatar.cc/40?img=12" class="rounded-circle" width="36" height="36" alt="Avatar">
-                                        <span class="fw-medium text-main">Globex Inc</span>
-                                    </div>
-                                </td>
-                                <td class="text-muted">#TRX-8274</td>
-                                <td class="fw-semibold text-main">$840.50</td>
-                                <td><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-3 py-2 fw-medium">Pending</span></td>
-                                <td class="text-end">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
-                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-repeat me-2 text-muted"></i>Retry Charge</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center gap-3 py-2">
-                                        <img src="https://i.pravatar.cc/40?img=13" class="rounded-circle" width="36" height="36" alt="Avatar">
-                                        <span class="fw-medium text-main">Soylent Corp</span>
-                                    </div>
-                                </td>
-                                <td class="text-muted">#TRX-8275</td>
-                                <td class="fw-semibold text-main">$3,400.00</td>
-                                <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 fw-medium">Completed</span></td>
-                                <td class="text-end">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
-                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Details</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-download me-2 text-muted"></i>Download Invoice</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center gap-3 py-2">
-                                        <img src="https://i.pravatar.cc/40?img=14" class="rounded-circle" width="36" height="36" alt="Avatar">
-                                        <span class="fw-medium text-main">Initech</span>
-                                    </div>
-                                </td>
-                                <td class="text-muted">#TRX-8276</td>
-                                <td class="fw-semibold text-main">$450.00</td>
-                                <td><span class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-3 py-2 fw-medium">Failed</span></td>
-                                <td class="text-end">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm btn-action rounded-circle" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
-                                        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2 text-muted"></i>View Error Logs</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2 text-muted"></i>Email Customer</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Activity Timeline -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="stats-card h-100">
-                <h5 class="card-title-text mb-4">Activity Stream</h5>
-                
-                <div class="timeline mt-4">
-                    <div class="timeline-item d-flex gap-3 position-relative pb-4">
-                        <div class="timeline-line"></div>
-                        <div class="timeline-icon bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
-                            <i class="bi bi-person-plus-fill"></i>
-                        </div>
-                        <div class="timeline-content pt-1">
-                            <h6 class="mb-1 text-main fs-6">New user joined</h6>
-                            <p class="text-muted small mb-1">Alice Smith created an account</p>
-                            <span class="small text-muted opacity-75">2 mins ago</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item d-flex gap-3 position-relative pb-4">
-                        <div class="timeline-line"></div>
-                        <div class="timeline-icon bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
-                            <i class="bi bi-currency-dollar"></i>
-                        </div>
-                        <div class="timeline-content pt-1">
-                            <h6 class="mb-1 text-main fs-6">Payment received</h6>
-                            <p class="text-muted small mb-1">$1,250.00 from Acme Corp</p>
-                            <span class="small text-muted opacity-75">1 hour ago</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item d-flex gap-3 position-relative pb-4">
-                        <div class="timeline-line"></div>
-                        <div class="timeline-icon bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
-                            <i class="bi bi-rocket-fill"></i>
-                        </div>
-                        <div class="timeline-content pt-1">
-                            <h6 class="mb-1 text-main fs-6">Deployment completed</h6>
-                            <p class="text-muted small mb-1">v2.4.1 shipped successfully</p>
-                            <span class="small text-muted opacity-75">3 hours ago</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item d-flex gap-3 position-relative">
-                        <div class="timeline-icon bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center z-1" style="width: 36px; height: 36px; flex-shrink: 0;">
-                            <i class="bi bi-exclamation-triangle-fill"></i>
-                        </div>
-                        <div class="timeline-content pt-1">
-                            <h6 class="mb-1 text-main fs-6">Server warning</h6>
-                            <p class="text-muted small mb-1">CPU usage spiked to 92%</p>
-                            <span class="small text-muted opacity-75">5 hours ago</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</div>
         </div>
     </div>
 </div>
@@ -576,7 +228,6 @@
     <!-- Custom JS -->
     <script src="js/notifications.js"></script>
     <script src="js/core.js"></script>
-    <script src="js/script.js"></script>
-
+    <script src="js/charts.js"></script>
 </body>
 </html>
